@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- style sheet -->
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <!-- fonts -->
+       <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+       <!-- js -->
+       
+       <script src="myScript.js"></script>
+    <title>Admin dashboard</title>
+</head>
+<body>
+    <section id="adminhome">
+        <div class="backgroundbox">
+            <a href="index.html"><h1>BOOM</h1></a>
+            <a href="studenthome.html"><img src="images/icon_switch.svg" alt="" class="editicon"></a>
+            <!-- ACTION MESSAGE -->
+                <!-- Add new ...... -->
+            <div id="actionAdminAddNew"class="actionMessage">
+                <a href="studentcreateshow.html" class="actionChoice"><p>Add New Show</p></a>
+                <a href="studentcreatenews.html" class="actionChoice"><p>Add News</p></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+                <!-- Edit Show -->
+            <div id="actionStudentEditShow"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit Show</p></a>
+                <a href="" class="actionChoice"><span onclick="displayAdminNews()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+                <!-- Edit News -->
+            <div id="actionStudentEditNews"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit News</p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+            <!-- Edit students -->
+            <div id="actionAdminEditStudent"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit Student</p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+
+            <!-- Edit Admins -->
+            <div id="actionAdminEditAdmin"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit Admin</p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+
+            <!-- Edit Schedule -->
+            <div id="actionAdminEditSchedule"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit Schedule Item </p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+
+
+            <!-- DELETE CONFIRMATION -->
+            <!-- <div id="actionStudentDeleteConf"class="actionMessage">
+                <p>Delete this Show?</p>
+                <div class="delCancel">
+                    <a href="" class="actionChoice"><p class="delete">Delete</p></a>
+                    <a href="" class="actionChoice"><p>Cancel</p></a>
+                </div>
+            </div> -->
+            <!-- EDIT PROFILE -->
+            <div id="actionStudentEditProfile"class="actionMessage">
+                <a href="studenteditprofile.html" class="actionChoice"><p>Edit Profile</p></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+            <!-- profile -->
+            <img src="images/profile.png" alt="" class="profileimage">
+            <h5>Connor Wright</h5>
+        </div>
+        <!-- cards -->
+        <div class="studentsections">
+            <span onclick="displayAdminShows()"><h2 id="headerAdminShows">Shows</h2></span></a>
+            <span onclick="displayAdminNews()"><h2 id="headerAdminNews">News</h2></span>
+            <span onclick="displayAdminStudents()"><h2 id="headerAdminStudents">Students</h2></span>
+            <span onclick="displayAdminAdmins()"><h2 id="headerAdminAdmins">Admins</h2></span>
+            <span onclick="displayAdminSchedule()"><h2 id="headerAdminSchedule">Schedule</h2></span>
+            <span onclick="displayAdminAnalytics()"><h2 id="headerAdminAnal">Analytics</h2></span>
+        </div>
+        <!-- section shows -->
+        <div id="adminShows">
+            <!-- filter dropdown -->
+            <div class="filter">
+                <p>displayed by:</p>
+                <div class="filterdropdwn">
+                    <span onclick="filterGeneralFunction('myFilterdwnShows')" class="filterbtn"><img src="images/filter.svg" alt=""></span>
+                    <div id="myFilterdwnShows" class="filter-content">
+                        <a href="" class="filterchoice"><p>All</p></a>
+                        <a href="" class="filterchoice"><p>Edinburgh College: Granton Campus</p></a>
+                        <a href="" class="filterchoice"><p>Fife College</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- content -->
+            <div class="schedulecontainer">
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionStudentEditShow')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionStudentEditShow')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionStudentEditShow')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <!-- section news -->
+        <div id="adminNews">
+            <!-- filter dropdown -->
+            <div class="filter">
+                <p>displayed by:</p>
+                <div class="filterdropdwn">
+                    <span onclick="filterGeneralFunction('myFilterdwnNews')" class="filterbtn"><img src="images/filter.svg" alt=""></span>
+                    <div id="myFilterdwnNews" class="filter-content">
+                        <a href="" class="filterchoice"><p>All</p></a>
+                        <a href="" class="filterchoice"><p>Edinburgh College: Granton Campus</p></a>
+                        <a href="" class="filterchoice"><p>Fife College</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- content -->
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+        </div>
+        <!--  setion students -->
+        <div id="adminStudents">
+            <!-- filter dropdown -->
+            <div class="filter">
+                <p>displayed by:</p>
+                <div class="filterdropdwn">
+                    <span onclick="filterFunction()" class="filterbtn"><img src="images/filter.svg" alt=""></span>
+                    <div id="myFilterdwn" class="filter-content">
+                        <a href="" class="filterchoice"><p>All</p></a>
+                        <a href="" class="filterchoice"><p>Edinburgh College: Granton Campus</p></a>
+                        <a href="" class="filterchoice"><p>Fife College</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- content -->
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Hermiona Granger</p>
+                <span onclick="showActionMessage('actionAdminEditStudent')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Narcisa Dracaris Granger </p>
+                <span onclick="showActionMessage('actionAdminEditStudent')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Hermiona Granger</p>
+                <span onclick="showActionMessage('actionAdminEditStudent')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Hermiona Granger</p>
+                <span onclick="showActionMessage('actionAdminEditStudent')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            
+        </div>
+        <!--  setion admins -->
+        <div id="adminAdmins">
+            <!-- filter dropdown -->
+            <div class="filter">
+                <p>displayed by:</p>
+                <div class="filterdropdwn">
+                    <span onclick="filterFunction()" class="filterbtn"><img src="images/filter.svg" alt=""></span>
+                    <div id="myFilterdwn" class="filter-content">
+                        <a href="" class="filterchoice"><p>All</p></a>
+                        <a href="" class="filterchoice"><p>Edinburgh College: Granton Campus</p></a>
+                        <a href="" class="filterchoice"><p>Fife College</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- content -->
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Connor Wright</p>
+                <span onclick="showActionMessage('actionAdminEditAdmin')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Severus Snape</p>
+                <span onclick="showActionMessage('actionAdminEditAdmin')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+            <div class="adminStudentBox">
+                <img src="images/profile.png" alt="" class="studImg">
+                <p>Colin Briggs</p>
+                <span onclick="showActionMessage('actionAdminEditAdmin')"><img src="images/icon_editlight.svg" alt=""></span>
+            </div>
+        </div>
+        <!--  setion schedule -->
+        <div id="adminSchedule">
+            <!-- plus icon -->
+            <span class="icon_plus"><a href="admincreateschedule.html"><img src="images/plus.svg" alt=""></a></span>
+            <div class="week">
+                <button class="day">MON</button>
+                <button class="day">TUE</button>
+                <button class="day">WEN</button>
+                <button class="day">THU</button>
+                <button class="day">FRI</button>
+            </div>
+            <div class="schedulecontainer">
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionAdminEditSchedule')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+                
+            </div>
+        </div>
+        <!-- section analytics -->
+        <div id="adminAnalytics">
+            <h5>Analytics</h5>
+        </div>
+    </section>
+  
+        
+</body>
+</html>

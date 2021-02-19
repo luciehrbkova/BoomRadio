@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- style sheet -->
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <!-- fonts -->
+       <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+       <!-- js -->
+       
+       <script src="myScript.js"></script>
+    <title>Student</title>
+</head>
+<body>
+    <section id="studenthome">
+        <div class="backgroundbox">
+            <a href="index.html"><h1>BOOM</h1></a>
+            <span onclick="showActionMessage('actionStudentEditProfile')"><img src="images/icon_edit.png" alt="" class="editicon"></span>
+            <div onclick="showActionMessage('actionStudentAddNew')" class="icon_plus"><img src="images/plus.svg" alt=""></div>
+            <!-- ACTION MESSAGE -->
+                <!-- Add new ...... -->
+            <div id="actionStudentAddNew"class="actionMessage">
+                <a href="studentcreateshow.html" class="actionChoice"><p>Add New Show</p></a>
+                <a href="studentcreatenews.html" class="actionChoice"><p>Add News</p></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+                <!-- Edit Show -->
+            <div id="actionStudentEditShow"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit Show</p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+            <!-- Edit News -->
+            <div id="actionStudentEditNews"class="actionMessage">
+                <a href="" class="actionChoice"><p>Edit News</p></a>
+                <a href="" class="actionChoice"><span onclick="showConfMessage()"><p class="delete">Delete</p></span></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+
+            <!-- DELETE CONFIRMATION -->
+            <!-- <div id="actionStudentDeleteConf"class="actionMessage">
+                <p>Delete this Show?</p>
+                <div class="delCancel">
+                    <a href="" class="actionChoice"><p class="delete">Delete</p></a>
+                    <a href="" class="actionChoice"><p>Cancel</p></a>
+                </div>
+            </div> -->
+            <!-- EDIT PROFILE -->
+            <div id="actionStudentEditProfile"class="actionMessage">
+                <a href="studenteditprofile.html" class="actionChoice"><p>Edit Profile</p></a>
+                <a href="" class="actionChoice"><p>Cancel</p></a>
+            </div>
+            <!-- profile -->
+            <img src="images/profile.png" alt="" class="profileimage">
+            <h5>Hermiona Granger</h5>
+            <div class="socm">
+                <img src="images/icon_fb.svg" alt="">
+                <img src="images/icon_tw.svg" alt="">
+                <img src="images/icon_in.svg" alt="">
+                <img src="images/icon_yt.svg" alt="">
+                <img src="images/icon_yt.svg" alt="">
+            </div>
+        </div>
+        <div class="studentsections">
+            <span onclick="displayShows()"><h2 id="headerShows">Shows</h2></span>
+            <span onclick="displayNews()"><h2 id="headerNews">News</h2></span>
+            <span onclick="displayAnalytics()"><h2 id="headerAnal">Analytics</h2></span>
+        </div>
+        <div id="studentShows">
+            <div class="schedulecontainer">
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionStudentEditShow')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+                <div class="schedulebox">
+                    <p>Martin, Billy & David</p>
+                    <p class="schshow">The Boom Breakfast</p>
+                    <p class="time">TUE 8:00 AM</p>
+                    <span onclick="showActionMessage('actionStudentEditShow')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div id="studentNews">
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+            <div class="sNewsBox">
+                <p>Seasonal events and exclusivity in games</p>
+                <span onclick="showActionMessage('actionStudentEditNews')" class="icon_editdark"><img src="images/icon_editdark.svg" alt=""></span>
+            </div>
+        </div>
+        <div id="studentAnalytics">
+            <div class="analInfo"></div>
+            <h5>Analytics</h5>
+        </div>
+
+    </section>
+    
+    
+</body>
+</html>

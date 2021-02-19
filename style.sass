@@ -1,0 +1,1617 @@
+// VARIABLES
+$myColor: #FF20B3
+// DEFAULT SETTINGS_____________________________
+body,html
+    margin: 0px
+    padding: 0px
+    // width: 100vw
+    // height: 100vh
+    box-sizing: border-box
+    font-size: 16px
+    background-image: linear-gradient(180deg,  #000000 20%, #212637 60%, #000000 100%)
+    a
+        text-decoration: none
+
+// FONTS________________________________________
+h1
+    width: 150px
+    font-family: Raleway
+    font-size: 18px
+    font-weight: 400
+    color: #ffffff
+    margin-block-start: 0px
+    margin-block-end: 0px
+    margin: 0px
+    padding-top: 28px
+    padding-left: 30px
+    transition: 0.3s
+    &:hover
+        color: #FF20B3
+h2
+    font-family: Raleway
+    font-size: 24px
+    font-weight: 600
+    color: #ffffff
+    margin-block-start: 0px
+    margin-block-end: 0px
+    margin-top: 167px
+    margin-bottom: 66px
+    margin-left: 49px
+    @media only screen and (min-width: 600px)
+        margin-left: 112px
+    @media only screen and (min-width: 1024px)
+        margin-left: 163px
+h3
+    font-family: Raleway
+    font-size: 48px
+    font-weight: 700
+    text-align: right
+    color: #ffffff
+    margin-block-start: 0px
+    margin-block-end: 0px
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+    margin-top: 64px
+    margin-right: 49px
+    //for the showpage:
+    height: 132px 
+    @media only screen and (min-width: 600px)
+        width: 263px
+        height: 226px
+        margin-left: 392px
+    @media only screen and (min-width: 1024px)
+        width: 538px
+        height: 138px
+        margin-left: calc( 50vw - 60px)
+h4
+    font-family: Rock Salt
+    font-size: 20px
+    color: #FF20B3
+    position: absolute
+    z-index: 1
+    margin-top: -60px
+    margin-left: 49px
+    @media only screen and (min-width: 600px)
+        width: 285px
+        line-height: 40px
+        margin-left: 392px
+        margin-top: -85px
+    @media only screen and (min-width: 1024px)
+        width: 650px
+        margin-left: calc( 50vw - 325px)
+        text-align: right
+        margin-top: 0px
+        
+h5
+    font-family: Raleway
+    font-size: 24px
+    font-weight: 700
+    color: #ffffff
+    margin-block-start: 0px
+    margin-block-end: 0px
+p
+    font-family: Raleway
+    font-size: 14px
+    font-weight: 400
+    color: #ffffff
+    // color: red
+    margin-block-start: 0px
+    margin-block-end: 0px
+
+// MIXINS
+@mixin login_background
+    height: 100vh
+    background-image: url("images/login_mob_2x375x667.png")
+    background-size: 100%
+    background-repeat: no-repeat
+    @media only screen and (min-width: 600px)
+        background-image: url("images/login_tab_1024x1366.png")
+    @media only screen and (min-width: 600px)
+        background-image: url("images/login_desk_1440x910.png")
+
+@mixin schedulecontainer
+    margin-left: calc( 50vw - 160px)
+    margin-top: 55px
+    @media only screen and (min-width: 600px)
+        margin-left: calc( 50vw - 202.5px)
+    @media only screen and (min-width: 1024px)
+        margin-left: 0px
+    .schedulebox
+        width: 320px
+        height: 64px
+        background: linear-gradient(180deg, #FF0D53 0%, #FF20B3 100%)
+        border-radius: 10px
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.50)
+        margin-bottom: 20px
+        transition: 0.3s
+        &:hover
+            transform: scaleX(1.05) scaleY(1.05)
+        @media only screen and (min-width: 600px)
+            width: 405px
+        p
+            font-size: 16px
+            font-weight: 400
+            padding: 5px 0px 2px 21px
+        .schshow
+            width: 247px
+            color: #000000
+            background: #ffffff
+            padding-top: 3px
+            border-radius: 0 10px 10px 0
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25)
+        .time
+            font-weight: 300
+            position: relative
+            z-index: 2
+            padding: 5px 0px 2px 0px
+            margin-top: -51px
+            margin-left: 200px
+            @media only screen and (min-width: 600px)
+                margin-left: 285px  
+        .icon_editdark
+            position: relative
+            left: 285px
+            top: 10px
+@mixin loginformfield
+    width: 203px
+    height: 41px
+    border: 0px
+    border-radius: 20px
+    padding-left: 24px
+    padding-right: 24px
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5), inset 4px 4px 4px rgba(0, 0, 0, 0.25)
+    font-size: 14px
+    font-weight: 300
+    color: #212637
+@mixin loginsubmitfield
+    width: 251px
+    height: 41px
+    border: 0px
+    border-radius: 20px
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+    background-color: #FF0D53
+    color: #ffffff
+    font-size: 14px
+    font-weight: 300
+@mixin toprighticon
+    width: 20px
+    position: absolute
+    top: 30px
+    right: 30px
+@mixin presenterprofileimage
+    width: 116px
+    height: 116px
+    border-radius: 100px
+    border: 5px solid #ffffff
+    margin-top: 15px
+    margin-bottom: 15px
+    margin-left: calc( 50vw - 63px )
+    @media only screen and (min-width: 600px)
+        margin-top: 40px
+@mixin dashboardfont
+    font-size: 18px
+    font-weight: 200
+    margin: 0px
+@mixin dashboardheader
+    font-size: 24px
+    font-weight: 200
+    text-align: center
+    @media only screen and (min-width: 600px)
+        padding: 10px
+@mixin dashboardsocm
+    display: flex
+    justify-content: space-evenly
+    max-width: 150px
+    align-self: center
+    padding-top: 24px
+    padding-bottom: 24px
+    margin-left: calc( 50vw - 75px )
+    @media only screen and (min-width: 600px)
+        padding-bottom: 40px
+@mixin day
+    width: 58px
+    height: 28px
+    color: #ffffff
+    background-color: #212637
+    border: 0px
+    border-radius: 20px
+    font-family: Raleway
+    font-weight: 300
+    font-size: 14px
+    padding: 0px
+    transition: 0.3s
+    @media only screen and (min-width: 600px)
+        width: 70px
+    &:hover
+        background-color: #FF0D53 
+
+
+// BUTTON______________________________________
+.viewall
+    width: 119px
+    height: 41px
+    margin: auto
+    color: #ffffff
+    background-color: #FF0D53 
+    border: 0px
+    border-radius: 30px
+    font-family: Raleway, san-serif
+    font-weight: 300
+    font-size: 14px
+    margin-top: 24px
+    transition: 0.3s
+    &:hover
+        background-color: #ffffff
+        background-position: -100% 100%
+        color: #FF0D53 
+        font-weight: 500
+
+// MENU________________________________________
+.hambg
+    @include toprighticon
+.sidenav 
+    height: 279px
+    width: 0 // 0 width - change this with JavaScript */
+    position: fixed //* Stay in place */
+    z-index: 10 //* Stay on top */
+    top: 0
+    right: 0
+    background: linear-gradient(180deg, #FF0D53 21.88%, #FF20B3 100%)
+    overflow-x: hidden //* Disable horizontal scroll */
+    padding-top: 66px
+    padding-bottom: 46px
+    transition: 0.5s //* 0.5 second transition effect to slide in the sidenav */
+    .closebtn //close button
+        position: absolute
+        top: 8px
+        right: 33px
+        font-size: 36px
+        font-weight: 100
+        margin-left: 50px
+    a 
+        padding: 6px 0px 6px 79px
+        text-decoration: none
+        font-family: Raleway
+        font-size: 16px
+        color: #ffffff
+        display: block
+        transition: 0.3s
+        @media only screen and (min-width: 600px)
+            padding-left: 109px
+        @media only screen and (min-width: 1024px)
+            padding-left: 163px
+    a:hover 
+        color: #212637 
+// ICONS
+.backicon
+    @include toprighticon
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+// @media screen and (max-height: 450px) 
+// .sidenav
+//     padding-top: 15px
+// .sidenav a
+//     font-size: 18px
+.homelink
+    background-color: red
+    width: 50px
+
+
+// SECTIONS____________________________________
+
+// 1 HOME______________________________________
+#home
+    height: 100vh
+    background-image: url("images/home_mob_2x375x667.png")
+    background-size: 100%
+    background-repeat: no-repeat
+    @media only screen and (min-width: 600px)
+        background-image: url("images/home_tab_1024x1366.png")
+    @media only screen and (min-width: 1024px)
+        height: 110vh
+        background-image: url("images/home_desk_1440x910.png")   
+    @media only screen and (min-width: 1280px)
+        height: 115vh
+        background-image: url("images/home_desk_2880x1820.png")
+    @media only screen and (min-width: 1920px)
+        height: 118vh
+    .playbutton
+        width: 66px
+        height: 66px
+        background: radial-gradient(50% 50% at 50% 50%, #FF20B3 0%, #FF0D53 100%)
+        border-radius: 50px
+        margin: auto
+        margin-top: 63vh
+        transition: 0.3s
+        animation: beat 0.8s infinite
+        @keyframes beat 
+            50%
+                transform: scale(1.1)
+                // filter: blur(0.1px)
+                background: radial-gradient(50% 50% at 50% 50%, #FF0D53 0%, #FF20B3 100%)
+        &:hover
+            transform: scaleX(1.2) scaleY(1.2)
+        @media only screen and (max-width: 320px)
+            margin-top: 60vh
+        @media only screen and (min-width: 1024px)
+            position: absolute
+            left: 85vw
+            top: 15vh
+        img
+            margin-top: 18px
+            margin-left: 21px       
+    .playnow
+        width: 277px
+        height: 40px
+        background: #212637
+        border-radius: 35px
+        margin: auto
+        margin-top: 7vh
+        padding-top: 5px
+        @media only screen and (max-width: 320px)
+            margin-top: 5vh
+        @media only screen and (min-width: 600px)
+            width: 358px
+            height: 46px
+            padding-top: 7px
+        @media only screen and (min-width: 1024px)
+            background: rgba(0, 0, 0, 0.36)
+            position: absolute
+            top: 80vh
+            left: calc( 50vw - 179px)
+        p
+            text-align: center
+            font-weight: 200
+            line-height: 18px
+            @media only screen and (min-width: 600px)
+                font-size: 16px
+                line-height: 20px
+// NEWS & TWITTER CONTAINER
+.newstwittercontainer
+    @media only screen and (min-width: 1024px)
+        width: 954px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-left: calc( 50vw - 477px)
+        h2
+            margin-left: 0px
+        
+// 2 NEWS______________________________________
+#news
+.newscontainer
+    width: 277px
+    background-color: #212637
+    border-radius: 10px
+    padding: 22px 20px 44px 20px
+    margin: auto
+    @media only screen and (min-width: 600px) 
+        width: 463px
+        padding: 32px 40px 44px 40px
+    @media only screen and (min-width: 1024px)
+        width: 388px
+    .newsbox
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding: 20px 0px 20px 0px
+        border-bottom: 1px solid #ffffff
+        &:hover
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 19.56%, rgba(0, 0, 0, 0.2) 79.79%, rgba(0, 0, 0, 0) 98.84%)
+        .newsimage
+            width: 79px
+            border-radius: 10px
+        .newsheader
+            font-weight: 600
+            width: 178px
+            height: 60px
+            @media only screen and (min-width: 600px) and (max-width: 1023px)
+                width: 348px
+                font-size: 18px
+            @media only screen and (min-width: 1024px)
+                width: 283px
+        p
+            width: 178px
+            font-weight: 300
+.readmore
+    width: 119px
+    height: 41px
+    color: #ffffff
+    background-color: #212637
+    border: solid 0.5px #ffffff
+    border-radius: 30px
+    font-family: Raleway, san-serif
+    font-weight: 300
+    font-size: 14px
+    margin-top: 44px
+    margin-left: 79px
+    transition: 0.3s
+    &:hover
+        background-color: #ffffff
+        color: #212637
+    @media only screen and (min-width: 600px) 
+        margin-left: 172px
+    @media only screen and (min-width: 1024px)
+        margin-left: 122px
+
+// 3 TWITTER______________________________________
+#twitter
+    .twitterbox
+        width: 317px
+        margin: auto
+        @media only screen and (min-width: 600px) and (max-width: 1023px)
+            width: 543px
+            .twitter-timeline
+                width: 543px !important
+                height: 717px !important
+        @media only screen and (min-width: 1024px)
+            .twitter-timeline
+                height: 761px !important        
+    
+// INASTAGRAM SCHEDULE CONTAINER
+.instagramschedulecontainer
+    @media only screen and (min-width: 1024px)
+        width: 954px
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-between
+        margin-left: calc( 50vw - 477px)
+        h2
+            margin-left: 0px
+// 4 INSTAGRAM______________________________________
+#instagram
+    // height: 100vh
+    .twitterbox
+        width: 317px
+        margin: auto
+        @media only screen and (min-width: 600px) and (max-width: 1023px)
+            width: 543px
+            .twitter-timeline
+                width: 543px !important
+                height: 717px !important
+        @media only screen and (min-width: 1024px)
+            margin: 0px
+            margin-top: 148px
+            .twitter-timeline
+                height: 761px !important  
+
+// 5 SCHEDULE______________________________________
+#schedule
+    @media only screen and (min-width: 600px)
+        width: 405px
+    .week
+        width: 317px
+        display: flex
+        justify-content: space-between
+        margin: auto
+        @media only screen and (min-width: 600px)
+            width: 405px
+            margin-left: calc( 50vw - 202.5px)
+        @media only screen and (min-width: 1024px)
+            margin: 0px
+        .day
+            @include day
+            
+
+
+.schedulecontainer
+    @include schedulecontainer
+    
+
+// 6 SHOWS______________________________________
+#shows
+.showscontainer
+    width: 317px
+    margin: auto
+    @media only screen and (min-width: 600px)
+        width: 543px
+    @media only screen and (min-width: 1024px)
+        width: 955px
+    .showboxesformobile
+        width: 317px
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media only screen and (min-width: 600px)
+            display: none
+    .showboxesfortablet
+        display: none
+        @media only screen and (min-width: 600px)
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+    .showsbox
+        width: 148px
+        height: 148px
+        background-color: #3662FD
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+        border-radius: 10px
+        margin-bottom: 20px
+        transition: 0.5s
+        &:hover
+            transform: scaleX(1.05) scaleY(1.05)
+            // animation: showtime 0.5s
+            // @keyframes showtime
+            //     30%
+            //         filter: blur(1px)
+            //     80%
+            //         filter: blur(0px)
+        @media only screen and (min-width: 600px) 
+            width: 168px
+            height: 147px
+        p
+            padding: 0px 13px 13px 13px
+        .showman
+            width: 122px
+            height: 30px
+            text-transform: uppercase
+            padding: 13px 13px 8px 13px
+            @media only screen and (min-width: 600px) 
+                width: 139px
+        img
+            width: 139px
+            height: 45px
+            padding-left: 5px
+            @media only screen and (min-width: 600px) 
+                padding-left: 15px
+    .viewall
+        margin-left: 99px
+        @media only screen and (min-width: 600px)
+            margin-left: 212px
+            margin-top: 22px
+        @media only screen and (min-width: 1024px)
+                margin-left: 418px
+
+// 7 PRESENTERS______________________________________
+#presenters
+    .presenterscontainer
+        width: 277px
+        margin: auto
+        padding: 0px 20px 0px 20px
+        @media only screen and (min-width: 600px)
+            width: 615px
+            padding: 0px
+        @media only screen and (min-width: 1024px)
+            width: 955px
+        .presenterboxformobile
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            @media only screen and (min-width: 600px)
+                display: none
+        .presenterboxfortablet
+            display: none
+            @media only screen and (min-width: 600px)
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+        .presentersbox
+            width: 133px
+            margin: 0px
+            padding: 0px
+            transition: 0.4s
+            &:hover
+                // .presenter
+                transform: scaleX(1.1) scaleY(1.1)
+                p
+                    font-weight: 700
+                    color: #FF20B3 
+            @media only screen and (min-width: 600px)
+                    padding-left: 36px
+                    padding-right: 36px
+            .presenter
+                width: 125px
+                height: 125px
+                border-radius: 100px
+                margin-bottom: 20px
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+            p
+                height: 35px
+                text-align: center
+                margin-bottom: 30px
+        .viewall
+            margin-left: 79px
+            @media only screen and (min-width: 600px)
+                margin-left: 248px
+                margin-top: 22px
+            @media only screen and (min-width: 1024px)
+                margin-left: 418px
+// 8 CONTACT______________________________________
+#contact
+    // height: 100vh
+    padding-bottom: 20vh
+    .contactcontainer
+        @media only screen and (min-width: 1024px)
+            width: 955px
+            display: flex
+            flex-direction: row
+            margin-left: calc( 50vw - 477.5px)
+            margin-top: 20vh
+            margin-bottom: 20vh
+        .contactbox
+            width: 317px
+            background-color: #3662FD
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+            border-radius: 10px
+            margin: auto
+            margin-bottom: 40px
+            padding-top: 20px
+            padding-bottom: 20px
+            p
+                font-weight: 300
+                padding-left: 20px
+            img
+                position: relative
+                z-index: 2
+                margin-top: -150px
+                margin-left: 230px
+
+// 9 NAVIGARTION MAP______________________________
+#navmap
+    height: 358px
+    background: linear-gradient(180deg, #FF0D53 21.88%, #FF20B3 100%)
+    padding-top: 64px
+    @media only screen and (min-width: 600px)
+        height: 280px
+        padding-top: 45px
+    @media only screen and (min-width: 1024px)
+        height: 319px
+        padding-top: 89px
+    .links
+        width: 100px
+        // margin-left: 49px
+        // margin-top: -25px
+        margin: -25px 0px 39px 49px
+        @media only screen and (min-width: 600px)
+            font-size: 14px
+            margin: -25px 0px 5px 93px
+        @media only screen and (min-width: 1024px)
+            margin-left: 162px
+        a
+            font-family: Raleway, san-serif
+            font-size: 16px
+            font-weight: 300
+            line-height: 30px
+            color: #ffffff
+            margin-block-start: 0px
+            margin-block-end: 0px 
+            transition: 0.3s
+            &:hover
+                color: #212637
+            @media only screen and (min-width: 600px)
+                font-size: 14px
+                line-height: 24px
+    .sm
+        width: 120px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-left: 208px
+        @media only screen and (max-width: 320px)
+            margin-left: 188px
+        @media only screen and (min-width: 600px)
+            width: 130px
+            margin-left: 560px
+        @media only screen and (min-width: 1024px)
+            width: 150px
+            margin-left: calc( 100vw - 313px)
+    p
+        text-align: center
+        font-weight: 200
+
+// LOGIN__________________________________________  
+#login
+    background-color: #000000
+    @include login_background
+    .formbox
+        height: 161px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-top: 28vh
+        margin-bottom: 14vh
+        @media only screen and (min-width: 600px)
+            height: 188px
+            margin-top: 35vh
+        @media only screen and (min-width: 1024px)
+            height: 164px
+            margin-top: 40vh
+            margin-bottom: 20vh
+        .logform
+            align-self: center
+            @include loginformfield
+        .logsubmit   
+            align-self: center
+            @include loginsubmitfield
+    p
+        color: #FF0D53
+        font-weight: 600
+        text-align: center
+
+// REGISTER_______________________________________
+#register
+    background-color: #000000
+    @include login_background
+    .formbox
+        height: 346px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-top: 15vh
+        margin-bottom: 10vh
+        @media only screen and (min-width: 600px)
+            height: 418px
+            margin-top: 23vh
+        @media only screen and (min-width: 1024px)
+            height: 346px
+            margin-top: 27vh
+        .logform
+            align-self: center
+            @include loginformfield
+        .logsubmit   
+            align-self: center
+            @include loginsubmitfield
+    p
+        color: #FF0D53
+        font-weight: 600
+        text-align: center
+
+// SHOW PAGE______________________________________
+#showpage
+    // height: 200vh
+    background-image: url("images/show_bckg_mob.png")
+    background-size: 100%
+    background-repeat: no-repeat
+    background-color: #000000
+    @media only screen and (min-width: 600px)
+        background-image: url("images/show_bckg_tab.png")
+    @media only screen and (min-width: 1024px)
+        background-image: url("images/show_bckg_desk.png")
+    .grammy
+        width: 306px
+        height: 306px
+        background: radial-gradient(38.4% 38.4% at 51.06% 50.16%, #000000 0%, #212637 45.83%, #000000 100%)
+        border-radius: 300px
+        display: flex
+        margin-left: -53px
+        border: 0.5px solid #50525B
+        @media only screen and (min-width: 600px)
+            width: 350px
+            height: 350px
+            position: relative
+            z-index: 1
+            margin-left: 42px
+            margin-top: -160px
+        @media only screen and (min-width: 1024px)
+            margin-left: 117px
+            margin-top: -46px
+            animation: grammyArrival 1s 
+            @keyframes grammyArrival 
+                0%
+                    margin-left: -258px
+                    transform: rotate(-180deg)
+                100%
+                    margin-left: 117px
+                    transform: rotate(0deg) 
+        a
+            margin: auto
+            img
+                width: 125px
+                height: 125px
+                border-radius: 120px
+                align-self: center
+                transition: 0.5s
+                @media only screen and (min-width: 600px)
+                    width: 135px
+                    height: 135px
+                @media only screen and (min-width: 1024px)
+                    &:hover
+                        transform: scale(1.3)
+    p
+        font-weight: 200
+        margin: 77px 49px 150px 49px
+        @media only screen and (min-width: 600px)
+            margin: 92px 92px 113px 92px
+            font-size: 16px
+            line-height: 22px
+        @media only screen and (min-width: 1024px)
+            width: 650px
+            margin-left: calc( 50vw - 325px)
+            margin-top: 150px
+            margin-bottom: 20vh
+    .showscontainer
+        width: 317px
+        margin: auto
+        @media only screen and (min-width: 600px)
+            width: 543px
+        @media only screen and (min-width: 1024px)
+            width: 730px
+        .showsformobile
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            @media only screen and (min-width: 600px) and (max-width: 1023px)
+                display: none
+            
+        .showsfortablet
+            display: none
+            @media only screen and (min-width: 600px) and (max-width: 1023px)
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+        .showsbox
+            width: 148px
+            height: 148px
+            background-color: #3662FD
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+            border-radius: 10px
+            margin-bottom: 20px
+            @media only screen and (min-width: 600px) 
+                width: 168px
+                height: 147px
+            p
+                padding: 0px 13px 13px 13px
+                margin: 0px
+                @media only screen and (min-width: 600px) 
+                    font-size: 14px
+                    line-height: 18px
+                @media only screen and (min-width: 1024px)
+                    width: 168px
+            .showman
+                width: 122px
+                height: 30px
+                text-transform: uppercase
+                padding: 13px 13px 8px 13px
+                margin: 0px
+                @media only screen and (min-width: 600px) 
+                    width: 139px
+            img
+                width: 139px
+                height: 45px
+                padding-left: 5px
+                @media only screen and (min-width: 600px) 
+                    padding-left: 15px
+    .viewall
+        margin-top: 29px
+        margin-bottom: 20vh
+        opacity: 100%
+        @media only screen and (min-width: 1024px)
+            margin-left: 305.5px
+
+
+// PROFILE PAGE______________________________________________
+#profilepage
+    background-color: #000000 
+    .profilebox
+        display: flex
+        flex-direction: column
+        // background: linear-gradient(180deg, #3662FD 0%, #FF0D53 100%)
+        // background-image: linear-gradient(180deg, #fa709a 0%, #fee140 100%)
+        // background-image: linear-gradient(180deg, #3ab5b0 0%, #3d99be 31%, #56317a 100%)
+        // background-image: linear-gradient(180deg , #00dbde 0%, #fc00ff 100%)
+        background-image: linear-gradient(180deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+        h5
+            text-align: center
+        .presenter
+            width: 233px
+            height: 233px
+            border-radius: 200px
+            align-self: center
+            margin-top: 42px
+            margin-bottom: 42px
+            @media only screen and (min-width: 600px)
+                width: 300px
+                height: 300px
+                margin-top: 76px
+                margin-bottom: 52px
+        .sm
+            align-self: center
+            margin-top: 42px
+            margin-bottom: 42px
+            @media only screen and (min-width: 600px)
+                margin-bottom: 72px
+    p
+        margin: 70px 49px 0px 49px
+        @media only screen and (min-width: 600px)
+            margin: 113px 92px 0px 92px
+            line-height: 20px
+        @media only screen and (min-width: 1024px)
+            width: 650px
+            margin-left: calc( 50vw - 325px)
+            margin-top: 150px
+            font-size: 16px
+    .contentcontainer
+        @media only screen and (min-width: 1024px)
+            width: 954px
+            display: flex
+            flex-direction: row-reverse
+            justify-content: space-between
+            margin-left: calc( 50vw - 477px)
+            h2
+                margin-left: 0px
+    .schedulebox
+        p
+            margin-top: 0px
+            margin-left: 0px
+            @media only screen and (min-width: 600px)
+                line-height: 19px
+            @media only screen and (min-width: 1024px)
+                width: 305px
+                margin: 0px
+        .time
+            width: 110px
+            margin-top: -51px
+            margin-left: 200px
+            @media only screen and (min-width: 600px)
+                margin-left: 280px
+    .newscontainer
+        margin-bottom: 169px
+    .newsbox
+        p
+            margin: 0px
+            @media only screen and (min-width: 1024px)
+                width: 286px
+
+// ARTICLE________________________________________
+#article
+    background: linear-gradient(180deg,#212637  0%, #000000 100%)
+    padding-bottom: 169px
+    .articleimage
+        width: 100vw
+        margin-top: 29px
+        margin-bottom: 64px
+        @media only screen and (min-width: 600px)
+            width: calc( 100vw - 184px)
+            margin-left: 92px
+            margin-right: 92px
+        @media only screen and (min-width: 1024px)
+            width: 586px
+            margin-left: calc( 50vw - 293px) 
+    .authordate
+        display: flex
+        justify-content: space-between
+    h5
+        margin: 29px 29px 49px 29px
+        @media only screen and (min-width: 600px)
+            margin: 76px 92px 76px 92px
+        @media only screen and (min-width: 1024px)
+            margin: 98px 216px 98px 216px     
+    p
+        margin: 0px 29px 0px 29px
+        @media only screen and (min-width: 600px)
+            line-height: 22px
+            margin: 0px 92px 0px 92px
+        @media only screen and (min-width: 1024px)
+            margin: 0px 216px 0px 216px  
+    .newscontainer
+        margin-top: 10vh
+        p
+            margin: 0px
+    // .la
+    //     position: absolute
+    //     z-index: 1
+
+// ALL PRESENTERS_______________________________
+#allpresenters
+    background: linear-gradient(180deg,#000000 0%, #212637  100%)
+    padding-bottom: 20vh
+    h2
+        margin-top: 10vh
+    .presenterscontainer
+        // background-color: red
+        width: 290px
+        display: flex
+        flex-wrap: wrap
+        // justify-content: space-between
+        margin-left: calc( 50vw - 135px )
+        padding: 0px 
+        @media only screen and (min-width: 600px)
+            width: 615px
+            padding: 0px
+            margin-left: calc( 50vw - 267.5px )
+        @media only screen and (min-width: 1024px)
+            width: 1025px
+            margin-left: calc( 50vw - 472.5px)
+        .presentersbox
+            width: 145px
+            margin: 0px
+            padding: 0px
+            transition: 0.4s
+            @media only screen and (min-width: 600px)
+                width: 205px
+            &:hover
+                // .presenter
+                transform: scaleX(1.1) scaleY(1.1)
+                p
+                    font-weight: 700
+                    color: #FF20B3 
+            // @media only screen and (min-width: 600px)
+            //         padding-left: 36px
+            //         padding-right: 36px
+            .presenter
+                width: 125px
+                height: 125px
+                border-radius: 100px
+                margin-bottom: 20px
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+            p
+                width: 130px
+                height: 35px
+                text-align: center
+                margin-bottom: 30px
+// for all shows, all articles_____________________
+.filter
+    // background-color: red
+    width: 277px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-left: calc( 50vw - 138px )
+    margin-top: 49px
+    margin-bottom: 49px
+    @media only screen and (min-width: 600px)
+        width: 338px
+        margin-left: calc( 50vw - 68px  )
+    @media only screen and (min-width: 1024px)
+        margin-left: calc( 50vw + 134.5px  )
+    img
+        width: 25px
+        &:hover
+            transform: scale(1.1)
+    .filterdropdwn
+        position: relative
+        display: inline-block
+        .filter-content
+            display: none
+            position: absolute
+            background-color: #3662FD
+            width: 317px
+            z-index: 3
+            margin-left: -273px
+            margin-top: -25px
+            @media only screen and (min-width: 600px)
+                width: 543px
+                margin-left: -516px
+                margin-top: -28px
+            @media only screen and (min-width: 1024px)
+                width: 517px
+                margin-left: -448px
+            .filterchoice
+                // p
+                display: block
+                padding: 10px 20px
+                @media only screen and (min-width: 600px)
+                    padding-left: 40px
+                &:nth-child(1)
+                    padding-top: 20px
+                &:nth-last-child(1)
+                    padding-bottom: 20px
+                &:hover
+                    background-color:#6587FF
+        .filtershow
+            display: block
+// ALL SHOWS_____________________________
+#allshows
+    background: linear-gradient(180deg,#000000 0%, #212637  100%)
+    padding-bottom: 20vh
+    h2
+        margin-top: 10vh
+    .showscontainer
+        // background-color: yellow
+        width: 338px
+        display: flex
+        flex-wrap: wrap
+        margin-left: calc( 50vw - 158.5px )
+        @media only screen and (min-width: 600px)
+            width: 561px
+            margin-left: calc( 50vw - 271px)
+        @media only screen and (min-width: 1024px)
+            width: 988px
+            margin-left: calc( 50vw - 480px)
+    .showsbox
+        width: 148px
+        height: 148px
+        background-color: #3662FD
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4)
+        border-radius: 10px
+        margin-bottom: 20px
+        margin-right: 21px
+        transition: 0.5s
+        @media only screen and (min-width: 600px) 
+            width: 168px
+            height: 147px
+            margin-right: 19px
+        @media only screen and (min-width: 1024px)
+            margin-right: 28px
+        &:hover
+            transform: scaleX(1.05) scaleY(1.05)
+            // animation: showtime 0.5s
+            // @keyframes showtime
+            //     30%
+            //         filter: blur(1px)
+            //     80%
+            //         filter: blur(0px)
+        p
+            padding: 0px 13px 13px 13px
+        .showman
+            width: 122px
+            height: 30px
+            text-transform: uppercase
+            padding: 13px 13px 8px 13px
+            @media only screen and (min-width: 600px) 
+                width: 139px
+        img
+            width: 139px
+            height: 45px
+            padding-left: 5px
+            @media only screen and (min-width: 600px) 
+                padding-left: 15px
+    .filter-content
+        @media only screen and (min-width: 1024px)
+            width: 480px
+            margin-left: -456px
+            background-color: #212637           
+// ALL ARTICLES____________________________________
+#allarticles
+    background: #000000
+    padding-bottom: 20vh
+    h2
+        margin-top: 10vh
+    .newscontainer
+        @media only screen and (min-width: 1024px)
+            width: 954px
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            justify-content: space-between
+            margin-left: calc( 50vw - 517px)
+        .newsbox
+            @media only screen and (min-width: 1024px)
+                width: 388px
+
+// _________________________________________________
+// STUDENT__________________________________________
+// _________________________________________________
+// STUDENT HOME
+
+#studenthome
+    background: #000000
+    h5
+        @include dashboardheader
+    .backgroundbox
+        background: linear-gradient(180deg, #3662FD 0%, #FF0D53 100%)
+    .editicon
+        @include toprighticon
+    .profileimage
+        @include presenterprofileimage
+    .socm
+        @include dashboardsocm
+    h2
+        @include dashboardfont
+    
+.studentsections
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 277px
+    padding: 20px
+    margin-left: calc( 50vw - 158.5px )
+    @media only screen and (min-width: 600px)
+        width: 450px
+        margin-left: calc( 50vw - 245px )
+    h2
+        font-weight: 400 !important
+        // width: 80px
+        padding: 6px
+        @media only screen and (min-width: 600px)
+            padding-top: 16px
+            padding-bottom: 16px
+.icon_plus
+    display: absolute
+    position: fixed
+    top: calc( 100vh - 75px)
+    right: 30px
+    z-index: 10
+    img
+        width: 45px
+        height: 45px
+// default___________________
+#headerShows
+    color: #FF20B3
+#studentShows
+    .schedulecontainer
+        margin-top: 0px
+        @media only screen and (min-width: 600px)
+            margin-left: calc( 50vw - 224px )
+            .icon_editdark
+                left: 410px
+        .schedulebox
+            margin-top: 0px
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.50)
+            @media only screen and (min-width: 600px)
+                width: 448px
+            &:hover
+                transform: scale(1)
+                
+#studentNews
+    display: none
+    .sNewsBox
+        width: 317px
+        height: 64px
+        background-color: #FF20B3
+        border-radius: 10px
+        margin-left: calc( 50vw - 158.5px )
+        margin-bottom: 20px
+        @media only screen and (min-width: 600px)
+            width: 448px
+            margin-left: calc( 50vw - 224px )
+        p
+            width: 243px
+            height: 40px
+            padding: 12px 20px
+        .icon_editdark
+            position: relative
+            top: -29px
+            left: 285px
+            @media only screen and (min-width: 600px)
+                left: 410px
+            
+#studentAnalytics
+    display: none
+    .analInfo
+        width: 320px
+        height: 64px
+        background-color: #FF20B3
+        border-radius: 10px
+        margin-left: calc( 50vw - 158.5px )
+        margin-bottom: 20px
+        @media only screen and (min-width: 600px)
+            width: 448px
+            margin-left: calc( 50vw - 224px )
+
+// ACTION MESSAGE__________________________
+.actionMessage
+    width: 310px
+    background-color: #212637
+    border-radius: 20px
+    position: absolute
+    z-index: 10
+    bottom: 30px
+    padding: 0px 5px 0px 5px
+    margin-left: calc( 50vw - 160px )
+    @media only screen and (min-width: 600px)
+        width: 438px
+        margin-left: calc( 50vw - 224px )
+        bottom: 130px
+    @media only screen and (min-width: 1024px)
+        position: absolute
+        bottom: 30px
+        right: 30px
+    p
+        font-size: 18px
+        font-weight: 200
+        text-align: center
+        padding-top: 24px
+        padding-bottom: 20px
+        border-bottom: 0.5px solid #ABABAB
+    .actionChoice
+        .delete
+            color: red
+        &:nth-last-child(1)
+            p
+                border-bottom: 0px solid #ABABAB
+    .delCancel
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-around
+        p
+            padding-left: 20px
+            padding-right: 20px
+            border-bottom: 0px solid #ABABAB
+        // .actionChoice
+        //     &:nth-last-child(1)
+        //         p
+        //             border-left: 1px solid #ABABAB
+#actionStudentAddNew
+    display: none
+#actionStudentEditShow
+    display: none
+#actionStudentEditNews
+    display: none
+#actionStudentEditProfile
+    transition-delay: 5s
+    display: none
+#actionStudentDeleteConf
+    z-index: 11
+    display: none
+
+// Student edit profile
+#studentEditProfile
+    background-color: #000000
+    .backgroundbox
+        height: 80px
+    h5
+        @include dashboardheader
+    h2
+        @include dashboardfont
+    .fc
+        @media only screen and (min-width: 1024px)
+            // background-color: blue
+            width: 916px
+            display: flex
+            flex-direction: row
+            margin-left: calc( 50vw - 458px )
+        .fc_two
+            @media only screen and (min-width: 1024px)
+                margin-top: 0px
+            h2
+                padding-top: 0px
+
+
+// general form______________
+// .pen
+//     margin: 30px
+.createform
+    width: 317px
+    color: #ffffff
+    margin-left: calc( 50vw - 158px )
+    padding-bottom: 20vh
+    @media only screen and (min-width: 600px)
+        width: 448px
+        margin-left: calc( 50vw - 224px )
+        margin-top: 50px
+    @media only screen and (min-width: 1024px)
+        margin-left: 0px
+    
+    h2
+        font-size: 16px !important
+        padding: 15px
+        padding-top: 30px
+        color: #FF0D53 
+    textarea::placeholder
+        color: #ffffff
+    input::placeholder
+        color: #ffffff
+        background-color: #000000
+    .showinput
+        width: 287px
+        border: 0px
+        border-bottom: 0.5px solid #ffffff
+        color: #ffffff
+        background-color: #000000
+        padding: 15px
+        font-size: 14px
+        font-weight: 200
+        @media only screen and (min-width: 600px)
+            width: 418px
+    .smform
+        width: 317px
+        display: flex
+        flex-direction: row
+        @media only screen and (min-width: 600px)
+            width: 448px
+        img
+            width: 25px
+            margin-right: 5px
+    .sminput
+        width: 257px
+        border: 0px
+        border-bottom: 0.5px solid #ffffff
+        color: #ffffff
+        background-color: #000000
+        padding: 15px
+        font-size: 14px
+        font-weight: 200
+        position: relative
+        @media only screen and (min-width: 600px)
+            width: 448px
+        // top: -40px
+        // margin-left: 30px
+    .formbackgroundcont
+        width: 317px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-evenly
+        @media only screen and (min-width: 600px)
+            width: 448px
+
+    .formbackground
+        width: 70px
+        margin-right: 20px
+    .radio
+        position: relative
+        top: -8px
+        margin: 10px
+    img
+        width: 30px
+        padding-top: 10px
+    .submit
+        width: 100px
+        height: 31px
+        color: #ffffff
+        background-color: #FF0D53 
+        border: 0px
+        border-radius: 30px
+        font-family: Raleway, san-serif
+        font-weight: 300
+        font-size: 14px
+        margin-top: 40px
+        margin-left: 200px
+        @media only screen and (min-width: 600px)
+            margin-left: 348px
+        @media only screen and (min-width: 1024px)
+            margin-top: 320px
+// Student Create show form
+#studentcreateshow
+    background-color: #000000
+    .backgroundbox
+        height: 80px
+    h5
+        @include dashboardheader
+    h2
+        @include dashboardfont
+    .createform
+        @media only screen and (min-width: 1024px)
+            margin-left: calc( 50vw - 224px )
+            .submit
+                margin-top: 50px
+// Student Create News
+#studentcreatenews
+    background-color: #000000
+    .backgroundbox
+        height: 80px
+    h5
+        @include dashboardheader
+    h2
+        @include dashboardfont
+    .createform
+        @media only screen and (min-width: 1024px)
+            margin-left: calc( 50vw - 224px )
+            .submit
+                margin-top: 50px
+
+// ADMIN HOME _________________
+// ____________________________
+#adminhome
+    padding-bottom: 20vh
+    h5
+        @include dashboardheader
+        padding-bottom: 20px
+        @media only screen and (min-width: 1024px)
+            padding-bottom: 40px
+    .backgroundbox
+        background: linear-gradient(180deg, #3662FD 0%, #FF0D53 100%)
+    .editicon
+        @include toprighticon
+    .profileimage
+        @include presenterprofileimage
+    .socm
+        @include dashboardsocm
+    h2
+        @include dashboardfont
+    .filter
+        margin-top: 15px
+        @media only screen and (min-width: 600px)
+            margin-left: calc( 50vw - 169px )
+        .filter-content
+            @media only screen and (min-width: 600px)
+                width: 448px
+                margin-left: -368px
+    .studentsections
+        @media only screen and (min-width: 600px)
+            h2
+                padding-left: 20px
+                padding-right: 20px
+                width: 100px
+#headerAdminShows
+    color: #FF20B3
+#adminShows
+    .schedulecontainer
+        margin-top: 0px
+        @media only screen and (min-width: 600px)
+            width: 448px
+            margin-left: calc( 50vw - 224px )
+        .schedulebox
+            margin-top: 0px
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.50)
+            &:hover
+                transform: scale(1)
+            @media only screen and (min-width: 600px)
+                width: 448px
+            .icon_editdark
+                @media only screen and (min-width: 600px)
+                    left: 410px
+#adminNews
+    display: none
+    .sNewsBox
+        width: 320px
+        height: 64px
+        background-color: #FF20B3
+        border-radius: 10px
+        margin-left: calc( 50vw - 160px )
+        margin-bottom: 20px
+        @media only screen and (min-width: 600px)
+            width: 448px
+            margin-left: calc( 50vw - 224px )
+        p
+            width: 243px
+            height: 40px
+            padding: 12px 20px
+        .icon_editdark
+            position: relative
+            top: -29px
+            left: 285px
+            @media only screen and (min-width: 600px)
+                left: 410px
+#adminStudents
+    display: none
+.adminStudentBox
+    width: 277px
+    display: flex
+    flex-direction: row
+    margin-left: calc( 50vw - 138px )
+    margin-bottom: 13px
+    @media only screen and (min-width: 600px)
+        width: 448px
+        margin-left: calc( 50vw - 224px )
+    img
+        width: 15px
+        padding-left: 40px
+    p
+        width: 162px
+        padding: 5px
+        margin-left: -10px
+        @media only screen and (min-width: 600px)
+            width: 300px
+    .studImg
+        width: 30px
+        height: 30px
+        margin-right: 30px
+        border-radius: 15px
+        padding-left: 0px
+
+#adminAdmins
+    display: none
+#adminSchedule
+    display: none
+#adminAnalytics
+    display: none
+#adminSchedule
+    @media only screen and (min-width: 600px)
+        width: 448px
+    .schedulecontainer
+        margin-top: 50px
+        @media only screen and (min-width: 600px)
+            width: 448px
+            margin-left: calc( 50vw - 224px )
+        .schedulebox
+            @media only screen and (min-width: 600px)
+                width: 448px
+            .icon_editdark
+                @media only screen and (min-width: 600px)
+                    left: 410px
+    .week
+        width: 317px
+        display: flex
+        justify-content: space-between
+        margin: auto
+        margin-top: 10px
+        @media only screen and (min-width: 600px)
+            width: 405px
+            margin-left: calc( 50vw - 202.5px)
+        @media only screen and (min-width: 1024px)
+            margin: 0px
+            padding-top: 10px
+            margin-left: calc( 50vw - 202.5px)
+        .day
+            @include day
+
+// action messages for admin
+#actionAdminAddNew
+    display: none
+#actionAdminEditStudent
+    display: none
+#actionAdminEditAdmin
+    display: none
+#actionAdminEditSchedule
+    display: none
